@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all(:order => "created_at DESC")
+    @post= Post.new  #took the action from def new and put it in index
 
     respond_to do |format|
       format.html # index.html.erb

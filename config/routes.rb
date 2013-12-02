@@ -1,5 +1,12 @@
 Loops::Application.routes.draw do
+
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
+  root :to => "posts#index"
   resources :posts
+
+
+
 
 
   # The priority is based upon order of creation:
