@@ -1,0 +1,40 @@
+<h2><br>Respond<br></h2>
+
+
+
+<div id="projects">
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th>Media</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @posts.each do |post| %>
+  
+  <div class= "block">
+    <div class="title"><%= post.title %></div>
+    <div class="content"><%= post.Text %></div>
+    <div class="media"><%= post.media %></div>
+    <% if post.block? %>
+    <%= image_tag post.block_url.to_s %>
+    <% end %>
+    <td><%= link_to 'Show', post %></td>
+    <td><%= link_to 'Edit', edit_post_path(post) %></td>
+    <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+</div>
+<br />
+<div> 
+
+</div>
+<%= link_to 'New Post', new_post_path %>
+
+
+
+

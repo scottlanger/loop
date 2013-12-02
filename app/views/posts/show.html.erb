@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<h3>
+  
+  <%= @post.title %>
+<h3>
+
+<p>
+  
+  <%= @post.Text %>
+</p>
+
+<p>
+  <b>Media:</b>
+  <%= @post.media %>
+</p>
+
+<% if @post.block? %>
+<%= image_tag @post.block_url.to_s %>
+<% end %>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>
